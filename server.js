@@ -8,25 +8,19 @@ var bodyParser = require("body-parser")
 var express = require("express");
 var app = express()
 
-app.use(logger("dev"));
-app.use(
-    bodyParser.urlencoded({
-        extended:false
-    })
-);
-
 app.use(express.static("public"));
 
+app.use(logger("dev"));
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-mongoose.connect("mongodb://localhost/scraper_news")
+mongoose.connect("mongodb://localhost/scraper_news", { useNewUrlParser: true });
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error:"));
