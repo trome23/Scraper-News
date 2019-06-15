@@ -16,7 +16,7 @@ var ArticleSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Comment"
       }]
-})
+});
 
 var Article = mongoose.model("Article", ArticleSchema);
 
