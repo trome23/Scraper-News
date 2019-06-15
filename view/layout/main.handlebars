@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>Scraper News</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/cats.js"></script>
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dev/uubc/My-Homework/Scraper-News/public/assets/css/style.css" type="text/css" />
+    <title>Scraper News</title>
+</head>
+<body>
+    {{> nav/navbar }}
+        <div class="container">
+            {{{body}}}
+        </div>
+    {{> footer }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
 </html>
