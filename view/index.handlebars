@@ -1,19 +1,25 @@
+{{> nav}}
+
 <div>
-    <h1 class="card z-depth-3 center-align">Read the latest news from Vice.com</h1>
+    <h1 class="card z-depth-3 center-align">Read the latest news from FoxNews.com</h1>
     <div class="row">
         <div class="col s3"></div>
         <h5 class="card z-depth-3 center-align col s6">Click 'Scrape' to get the latest articles</h5>
     </div>
 </div>
-<div class="row">
-    <div class="col s2"></div>
-    <div class="col s8 left-align">
-        {{#each article}}
-        <div class="card-panel">
-            <h4>{{this.title}}</h4>
-            <a href="/readArticle/{{this._id}}" class="waves-effect waves-light btn" id="btnSignUp">Read Article</a>
-        </div>
+<div class="container">
+    
+        <div class="col s8 left-align" id='articles'>
+            {{#each articles}}
 
+            <div class="row">
+
+            </div>
+            <div class="card-panel">
+                <h4>{{this.title}}</h4>
+                <a href="/readArticle/{{this._id}}" class="waves-effect waves-light btn" id="btnSignUp">Read Article</a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -28,41 +34,22 @@
         <h5>Comment on this article</h5>
         <div class="row">
             <div class="input-field">
-                <i class="material-icons prefix">perm_identity</i>
-                <input type="text" id="icon_prefix" placeholder="Name" name="name" class="validate active">
-            </div>
-            <div class="input-field">
                 <i class="material-icons prefix">Comment</i>
                 <input type="text" id="icon_telephone" placeholder="Comment" name="comment" class="validate active">
             </div>
         </div>
         <div class="row">
             <div class="input-field">
-                <center><input class="btn add-comment-button topnav" type="submit" value="Submit"></center>
+                <center><input class="btn add-comment-button topnav" type="submit" value="Submit">Add Comment</center>
             </div>
         </div>
     </form>
 </div>
-<div class="row">
-    <div class="col s2"></div>
-    <div class="col s8">
-        <h5>Comments:</h5>
-        {{#if article.comment}}
-        {{#each article.comment}}
-            <div class="card">
-                <p id="nameComment">{{name}}</p>
-                <p>{{body}}</p>
-            </div>
-        {{/each}}
-        {{else}}
-            <p>No Comments Yet</p>
-        {{/if}}
-    </div>
-</div>
+
 <footer class="topnav">
   <div class="footer-copyright">© 2019 Copyright: Tyson Romero
       <div class="container">
-          All articles belong to <a href="https://www.vice.com/en_us" target="blank">Vice</a>
+          All articles belong to <a href="https://www.foxnews.com/" target="blank">FoxNews</a>
           <a href="/articles-json"> Article JSON</a>
       </div>
   </div>
