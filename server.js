@@ -19,10 +19,13 @@ app.set("view engine", "handlebars");
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraperNews";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
-var db = mongoose.connection;
 
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
+
+var db = require("./models");
+var dbc = mongoose.connection;
+
+dbc.on("error", console.error.bind(console, "connection error:"));
+dbc.once("open", function() {
     console.log("Connected to Mongoose!")
 })
 
@@ -32,7 +35,7 @@ app.get("/", function (req, res) {
             articles: data
         };
         console.log(hbsObject);
-        res.render("index", hbsObject);
+        res.json(hbsObject);
     });
 });
 

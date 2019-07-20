@@ -9,17 +9,17 @@
 </div>
 <div class="container">
     
+        {{#each articles}}
         <div class="col s8 left-align" id='articles'>
-            {{#each articles}}
 
             <div class="row">
-
             </div>
             <div class="card-panel">
                 <h4>{{this.title}}</h4>
                 <a href="/readArticle/{{this._id}}" class="waves-effect waves-light btn" id="btnSignUp">Read Article</a>
             </div>
         </div>
+        {{/each articles}}
     </div>
 </div>
 
